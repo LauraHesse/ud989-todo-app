@@ -18,6 +18,7 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
+            'click .priority-btn': 'priority',
             'click .edit-btn': 'edit',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
@@ -74,6 +75,12 @@ var app = app || {};
 		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
 			this.$el.addClass('editing');
+			this.$input.focus();
+		},
+
+        //Add Priority Class
+        priority: function () {
+			this.$el.addClass('priority');
 			this.$input.focus();
 		},
 
